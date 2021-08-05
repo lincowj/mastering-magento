@@ -2,7 +2,6 @@
 namespace Mastering\SampleModule\Block;
 
 use Magento\Framework\View\Element\Template;
-use Mastering\SampleModule\Model\ResourceModel\Item\Collection;
 use Mastering\SampleModule\Model\ResourceModel\Item\CollectionFactory;
 
 class Hello extends Template
