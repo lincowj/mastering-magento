@@ -1,0 +1,9 @@
+<?php
+/** @var \Mastering\SampleModule\Block\Hello $block */
+?>
+<?php echo $block->getLabel(); ?>
+<?php foreach ($block->getItems() as $item): ?>
+    <p>
+        <?php echo $item->getBrand(); ?> <?php echo $item->getModel(); ?>, plate <?php echo $item->getPlate(); ?>
+    </p>
+<?php endforeach; ?>
