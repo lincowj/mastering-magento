@@ -4,6 +4,6 @@
 <?php echo $block->getLabel(); ?>
 <?php foreach ($block->getItems() as $item): ?>
     <p>
-        <?php echo $item->getName(); ?>: <?php echo $item->getDescription(); ?>
+        <?php echo $item->getBrand(); ?> <?php echo $item->getModel(); ?>, plate <?php echo $item->getPlate(); ?>
     </p>
 <?php endforeach; ?>

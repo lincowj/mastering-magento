@@ -14,16 +14,47 @@ class InstallData implements InstallDataInterface
         $setup->getConnection()->insert(
             $setup->getTable('mastering_sample_item'),
             [
-                'name' => 'Item 1'
+                'brand' => 'Fiat',
+                'model' => '500',
+                'plate' => 'GPE-7E76'
             ]
-            );
-            
+        );
+        
         $setup->getConnection()->insert(
             $setup->getTable('mastering_sample_item'),
             [
-                'name' => 'Item 2'
+                'brand' => 'Volkswagen',
+                'model' => 'Taos',
+                'plate' => 'JNX-9E44'
             ]
-            );
+        );
+        
+        $setup->getConnection()->insert(
+            $setup->getTable('mastering_sample_item'),
+            [
+                'brand' => 'Lincoln',
+                'model' => 'Nautilus',
+                'plate' => 'QOF-7C50'
+            ]
+        );
+        
+        $setup->getConnection()->insert(
+            $setup->getTable('mastering_sample_item'),
+            [
+                'brand' => 'Hyundai',
+                'model' => 'HB20',
+                'plate' => 'RLF-3I85'
+            ]
+        );
+        
+        $setup->getConnection()->insert(
+            $setup->getTable('mastering_sample_item'),
+            [
+                'brand' => 'Chevrolet',
+                'model' => 'Onix',
+                'plate' => 'ANG-4G15'
+            ]
+        );
 
         $setup->endSetup();
     }

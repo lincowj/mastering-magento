@@ -4,7 +4,7 @@
         <referenceContainer name="content">
             <block class="Mastering\SampleModule\Block\Hello" name="Mastering_Hello" template="hello.phtml">
                 <arguments>
-                    <argument name="label" xsi:type="string">The Label</argument>
+                    <argument name="label" xsi:type="string">Cars</argument>
                 </arguments>
             </block>
         </referenceContainer>

@@ -17,7 +17,7 @@ class Logger implements ObserverInterface
     public function execute(Observer $observer)
     {
         $this->logger->debug(
-            $observer->getEvent()->getObject()->getName()
+            $observer->getEvent()->getName()
         );
     }
 }

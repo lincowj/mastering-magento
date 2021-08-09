@@ -16,10 +16,12 @@ class InstallSchema implements InstallSchemaInterface
 
         $table = $installer->getConnection()
             ->newTable($installer->getTable('mastering_sample_item'))
-            ->addColumn('id', Table::TYPE_INTEGER, null, ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true], 'Item ID')
-            ->addColumn('name', Table::TYPE_TEXT, 255, ['nullable' => false], 'Item Name')
-            ->addIndex($installer->getIdxName('mastering_sample_item', ['name']), ['name'])
-            ->setComment('Sample Items');
+            ->addColumn('id', Table::TYPE_INTEGER, null, ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true], 'Car ID')
+            ->addColumn('brand', Table::TYPE_TEXT, 255, [], 'Car Brand')
+            ->addColumn('model', Table::TYPE_TEXT, 255, ['nullable' => false], 'Car Model')
+            ->addColumn('plate', Table::TYPE_TEXT, 255, [], 'Car Plate')
+            ->addIndex($installer->getIdxName('mastering_sample_item', ['plate']), ['plate'])
+            ->setComment('Cars');
         $installer->getConnection()->createTable($table);
 
         $installer->endSetup();

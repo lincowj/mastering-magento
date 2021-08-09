@@ -12,10 +12,11 @@ class UpgradeSchema implements UpgradeSchemaInterface
     {
         $setup->startSetup();
 
+        /* 
         if (version_compare($context->getVersion(), '1.0.1', '<')) {
             $setup->getConnection()->addColumn(
                 $setup->getTable('mastering_sample_item'),
-                'description',
+                'state',
                 [
                     'type' => Table::TYPE_TEXT,
                     'nullable' => true,
@@ -23,6 +24,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ]
             );
         }
+        */
         
         if (version_compare($context->getVersion(), '1.0.2', '<')) {
             $setup->getConnection()->addColumn(
