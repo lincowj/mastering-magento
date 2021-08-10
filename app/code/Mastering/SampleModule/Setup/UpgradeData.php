@@ -11,7 +11,6 @@ class UpgradeData implements UpgradeDataInterface
     {
         $setup->startSetup();
 
-        /*
         if (version_compare($context->getVersion(), '1.0.1', '<')) {
 
             $setup->getConnection()->update(
@@ -24,7 +23,6 @@ class UpgradeData implements UpgradeDataInterface
 
         }
 
-        */
         $setup->endSetup();
     }
 }

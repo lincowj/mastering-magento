@@ -3,11 +3,13 @@ namespace Mastering\SampleModule\Block;
 
 use Magento\Framework\Event\ManagerInterface;
 use Magento\Framework\View\Element\Template;
+use Mastering\SampleModule\Model\ConfigLog;
 use Mastering\SampleModule\Model\ResourceModel\Item\CollectionFactory;
 
 class Hello extends Template
 {
     private $eventManager;
+    private $config;
 
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
@@ -17,10 +19,12 @@ class Hello extends Template
         Template\Context $context,
         CollectionFactory $collectionFactory,
         array $data = [],
-        ManagerInterface $eventManager
+        ManagerInterface $eventManager,
+        ConfigLog $config
     ) {
         $this->collectionFactory = $collectionFactory;
         $this->eventManager = $eventManager;
+        $this->config = $config;
         parent::__construct($context, $data);
     }
 
@@ -29,7 +33,9 @@ class Hello extends Template
      */
     public function getItems()
     {
-        $this->eventManager->dispatch('entered_table_page');
+        if ($this->config->isEnabled()) {
+            $this->eventManager->dispatch('entered_table_page');
+        }
         return $this->collectionFactory->create()->getItems();
     }
 }
