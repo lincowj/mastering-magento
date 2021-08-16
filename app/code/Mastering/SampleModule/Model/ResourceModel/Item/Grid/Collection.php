@@ -7,6 +7,9 @@ use Magento\Framework\Event\ManagerInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult;
 use Psr\Log\LoggerInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Collection extends SearchResult
 {
     public function __construct(
